@@ -1,0 +1,182 @@
+/* styles.css*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #78bffa;
+    display:flex;
+    justify-content:center;
+    align-items:start;
+    height: 100vh;
+    overflow: hidden;
+    font-family: luminari, fantasy;
+}
+
+#clock{
+    font-size:72px;
+    font-weight:bold;
+}
+
+label, select{
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+    
+}
+
+.vbox1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #464b56;
+    border-radius: 10px;
+    border: 2px solid #8e8e8e;
+    border-style: outset;
+    color:rgb(220, 184, 184);
+    position: absolute;
+    left: 2vw;
+    bottom: 3vh;
+    width: 37vw;
+    height: 25vh;
+}
+
+#am_pm_box{
+    font-size: 18px;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+#datebox{
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+.hbox1{
+    display: flex;
+    flex-direction: row;
+}
+
+.toggleBox{
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    background-color: #464b56;
+    border-radius: 10px;
+    border: 2px solid #8e8e8e;
+    border-style: outset;
+    color:rgb(220, 184, 184);
+    position: absolute;
+    left: 2vw;
+    bottom: 29vh;
+    width: 37vw;
+    height: 5vh;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    background-color: #464b56;
+    border: 2px solid #8e8e8e;
+    border-style: outset;
+    color:rgb(220, 184, 184);
+    position: absolute;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    padding-left: 9px;
+}
+
+
+#title{
+    font-size: 8vh;
+    font-weight: bold;
+}
+
+.weatherbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #464b56;
+    border-radius: 10px;
+    border: 2px solid #8e8e8e;
+    border-style: outset;
+    color:rgb(220, 184, 184);
+    position: absolute;
+    left: 2vw;
+    bottom: 35vh;
+    width: 52vw;
+    height: 52vh;
+}
+
+#biomeBox{
+    align-self: flex-start;
+    font-size: 3.5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+}
+
+#weatherTitle{
+    font-size: 7vh;
+    font-weight: bold;
+    margin-left: 3vw;
+}
+
+#weatherFlavorBox{
+    font-size: 2.8vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+}
+
+#weatherRulesetBox{
+    align-self: flex-start;
+    font-size: 2.3vh;
+    margin-left: 1vw;
+    margin-top: 1.9vh;
+}
+
+.weatherVbox1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.weatherVbox2{
+    display:flex;
+    flex-direction:column;
+    align-self: flex-start;
+    font-size: 3vh;
+    margin-left: 4vw;
+    margin-top: .5vh;
+    gap: 1vh;
+}
+
+.weatherHbox1{
+    display:flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.weatherHbox2{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+#generateWeatherButton{
+    position: absolute;
+    bottom: 1vh;
+    left: 1vw;
+}
+
+

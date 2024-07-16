@@ -1,0 +1,110 @@
+<!--
+    IDEAS:
+    Nice looking interface!
+    Toggle button that increments time in real time.
+    Up/down arrows change time increments.
+    SQL Link with database for weather, generates immersive weather experience
+    SQL Link with database of encounters, generates immersive encounters experience
+    Possibly encounter structures or magic areas? This could be extended to different modes...travel, encounter, etc. 
+    different color schemes based on biome
+    when you mouse over time interval, tells you you can use the arrow keys
+
+    ROADMAP:
+    JUNE
+    SQL Link with database for weather, generates immersive weather experience
+        - Choose Biome
+        - Be able to add biome to database eventually. 
+
+
+    JULY
+    SQL Link with database of encounters, generates immersive encounters experience
+    connect monsters to their biomes? 
+    Possibly encounter structures or magic areas? This could be extended to different modes...travel, encounter, etc. 
+    history tab
+    minimap?
+    Settings/home tab
+    Login screen
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cronus</title>
+        <link rel="stylesheet" type="text/css" href="styles.css"> 
+    </head>
+
+    <body>
+        <!--Navigation Bar Header-->
+        <div class="navbar">
+            <div id="title">Cronus</div>
+        </div>
+        
+        <!--Weather Box Format-->
+        <div class="weatherbox">
+            <div class="weatherHbox1">
+                <div class="weatherVbox1">
+                    <div id="biomeBox">Snowy Mountains</div>
+                    <div id="weatherTitle">Extremely Cold</div>
+                    <div id="weatherFlavorBox">Spit goes 'clink'</div>
+                </div>
+                <div class="weatherVbox2">
+                    <div class="weatherHbox2">
+                        <div><u>Wind:</u></div>
+                        <div id="windBox">Howling</div>
+                    </div>
+                    <div class="weatherHbox2">
+                        <div><u>Precipitation:</u></div>
+                        <div id="precipitationBox">Heavy Snow</div>
+                    </div>
+                    <div class="weatherHbox2">
+                        <div><u>Humidity:</u></div>
+                        <div id="humidityBox">High</div>
+                    </div>
+                    <div class="weatherHbox2">
+                        <div><u>Visibility:</u></div>
+                        <div id="visibilityBox">Horrible</div>
+                    </div>
+                </div>
+            </div>
+            <div id="weatherRulesetBox"><u>Rules:</u>  DC10 Consitution saving throw every 10 minutes or gain one level of exhaustion. Howling wind causes disadvantage on ranged attacks & hearing perception checks, worsens visibility, and extinguishes flames while rendering non-magical flight impossible. Heavy precipitation extinguishes fires and causes light obscurity in addition to disadvantage on all perception checks. High humidity moves the temperature two steps away from comfortable. Horrible visibility causes creatures to be effectively blind beyond 30 feet.</div>
+            <button id="generateWeatherButton">Generate Weather</button>
+        </div>
+        <!--Toggle box format-->
+        <div class="toggleBox">
+            <div>
+                <input type="checkbox" id="toggleBox">
+            </div>
+            <div>Toggle:</div>
+            <div>
+                <input type="text" id="toggleIncrement" style="width: 50px">
+            </div>
+            <div> minutes pass in-game for </div>
+            <div><input type="text" id="toggleTimer" style="width: 50px"></div>
+            <div>  irl.</div>
+        </div>
+
+        <!--Clock format-->
+        <div class="vbox1">
+            <div class="hbox1">
+                <div id="datebox">Jan 1,</div>
+                <div id="clock">12:00:00</div>
+                <div id="am_pm_box">pm</div>
+            </div>
+            <div class="hbox1">
+                <label for='dropdown'>Time interval:</label>
+                <select id="dropdown" name="options" tabindex="0">
+                    <option value="6">Turn (6 Seconds)</option>
+                    <option value="30">30 Minutes</option> 
+                    <option value="1">Hour</option>
+                    <option value="4">Elf Long Rest (4 Hours)</option>
+                    <option value="8">Long Rest (8 Hours)</option>
+                    <option value="24">Full Day</option>
+                </select>
+            </div>
+        </div>
+
+        <script src='clock.js'></script>
+        <script src="autoInc.js"></script>
+        <script src="weatherObjects.js"></script>
+    </body>
+</html>
