@@ -103,9 +103,9 @@ let incrediblyCold = new Temperature('Incredibly cold', 'DC10 Constitution savin
 let extremelyCold = new Temperature('Extremely cold', 'DC10 Consitution saving throw every 10 minutes or gain one level of exhaustion.', 'Spit goes "clink"', -21, -79, -4);
 let severelyCold = new Temperature('Severely cold', 'DC10 Consitution saving throw every 30 minutes or gain one level of exhaustion.', 'Frostbite likely without precautions', 0,-20,-3);
 let cold = new Temperature('Cold', 'DC10 Consitution saving throw every hour or gain one level of exhaustion.', 'Water freezes. Frostbite possible.', 32, 0, -2);
-let mildCold = new Temperature('Mildly cold', '', 'Typically comfortable in warm clothing.', 60, 33, -1)
-let comfortable = new Temperature('Comfortable', '', 'A comfortable temperature.', 79, 61, 0);
-let mildHot = new Temperature('Mildly Hot', '', 'Typically comfortable in light clothing.', 90, 80, 1);
+let mildCold = new Temperature('Mildly cold', 'Light cold is bearable.', 'Typically comfortable in warm clothing.', 60, 33, -1)
+let comfortable = new Temperature('Comfortable', 'A comfortable temperature.', 'A comfortable temperature.', 79, 61, 0);
+let mildHot = new Temperature('Mildly Hot', 'Mild heat is bearable.', 'Typically comfortable in light clothing.', 90, 80, 1);
 let hot = new Temperature('Hot', 'DC10 Consitution saving throw every hour or gain one level of exhaustion.', 'Light clothing require for long periods.',104, 91, 2);
 let severelyHot = new Temperature('Severely hot', 'DC10 Consitution saving throw every 30 minutes or gain one level of exhaustion. Creatures must drink double the amount of water normally required or make this roll with disadvantage.', 'Heat exhaustion likely, and heat stroke possible with prolonged exposure.', 125, 104, 3);
 let extremelyHot = new Temperature('Extremely hot', 'DC10 Consitution saving throw every 10 minutes or gain one level of exhaustion. Creatures must drink double the amount of water normally required or make this roll with disadvantage.', 'Heat stroke is highly likely.', 140, 126, 4);
@@ -177,9 +177,9 @@ class Region{
     setCurrentTemp(temp){
         this.currentTemp=temp;
         
-        let range = this.currentTemp.getMaxTemp() - this.currentTemp.getMinTemp();
+        let range = this.getCurrentTemp().getMaxTemp() - this.getCurrentTemp().getMinTemp();
         let x = Math.round(Math.random()*range);
-        this.setNumericalTemp(this.currentTemp.getMinTemp() + x);
+        this.setNumericalTemp(this.getCurrentTemp().getMinTemp() + x);
     }
 
     getWind(){
@@ -212,14 +212,6 @@ class Region{
 
     setNumericalTemp(temp){
         this.numericalTemperature = temp;
-        let newTemp = null;
-
-        for(let i of this.possibleTemps){
-            if(i.getMinTemp() <= temp && temp <= i.getMaxTemp()) newTemp = i;
-        }
-
-        if(newTemp != null) this.currentTemp = newTemp;
-        else console.log("This was unexpected!");   //Later I'll need to change this. !!!
     }
 
     getVisibility(){
@@ -299,7 +291,7 @@ class Region{
         const weatherRulesetBox = document.getElementById('weatherRulesetBox'); // Corrected variable declaration
     
         biomeBox.textContent = this.getName();
-        weatherTitle.textContent = this.getFeelsLike().getName();
+        weatherTitle.textContent = `${this.getFeelsLike().getName()}`;
         weatherFlavor.textContent = this.getFeelsLike().getDescription();
         windBox.textContent = this.getWind().getIntensity();
         precipitationBox.textContent = this.getPrecip().getIntensity();
@@ -314,10 +306,26 @@ class Region{
     } 
 }
 
-let snowyMountains = new Region('Snowy Mountains', [mildCold,cold,severelyCold],[noWind,blowingWind,howlingWind,noPrecip,gentlePrecip,heavyPrecip,noHumidity,moderateHumidity,highHumidity])
+let snowyMountains = new Region('Snowy Mountains', [mildCold,cold,severelyCold],[noWind,blowingWind,howlingWind,noPrecip,gentlePrecip,heavyPrecip,noHumidity])
+snowyMountains.generateWeather();
 
+const toolTipTrigger = document.getElementById('volatilityText');
+const toolTip = document.getElementById('volatilityTooltip');
+
+//Weather generation & box update.
 document.getElementById('generateWeatherButton').addEventListener('click', function(){
-    snowyMountains.generateWeather();
+snowyMountains.generateWeather();
+});
+
+//Weather volatility tooltip.
+toolTipTrigger.addEventListener('mouseover', function(event){
+    toolTip.style.display = 'block';
+    toolTip.style.left = event.pageX + 'px';
+    toolTip.style.top = event.pageY + 'px';
+});
+
+toolTipTrigger.addEventListener('mouseout', function(){
+    toolTip.style.display = 'none';
 });
 
 

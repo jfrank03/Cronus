@@ -2,6 +2,8 @@ const dropdown = document.getElementById('dropdown');
 const clock = document.getElementById('clock');
 const amPm = document.getElementById('am_pm_box');
 const datebox = document.getElementById('datebox');
+const volatility = document.getElementById('volatilityBox');
+let timeSinceWeatherUpdate = 0;
 
 let seconds = 0;
 let minutes = 0;
@@ -112,6 +114,14 @@ function incTime(unit, increment){
                                 switchAmPm();
                                 }
                             }
+
+                            if(volatility.value != ''){
+                                timeSinceWeatherUpdate += increment;
+                                if(timeSinceWeatherUpdate >= parseInt(volatility.value)){
+                                    snowyMountains.generateWeather();
+                                    timeSinceWeatherUpdate = timeSinceWeatherUpdate % parseInt(volatility.value);
+                                }
+                            }
                             break;
         case 'days': day += increment;
                         if(day > month.getDays()){
@@ -218,3 +228,4 @@ document.addEventListener('keydown', function(event){
                             break;
     }
 });
+

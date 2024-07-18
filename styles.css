@@ -63,6 +63,12 @@ label, select{
     flex-direction: row;
 }
 
+.intervalHBox{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
 .toggleBox{
     display: flex;
     flex-direction: row;
@@ -179,4 +185,137 @@ label, select{
     left: 1vw;
 }
 
+.weatherVolatilityHBox{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    font-size: 3vh;
+    position: absolute;
+    bottom:1vh;
+    right: 1vw;
+}
 
+#volatilityTooltip{
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 10;
+
+}
+
+.customButton1{
+    background-color: #514467;
+    border: 2px solid #31353f;
+    border-style: outset;
+    border-radius: 5px;
+    color: rgb(220, 184, 184);
+    text-align: center;
+    text-decoration: none;
+    font-family: luminari, fantasy;
+    display: inline-block;
+    font-size: 3.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.customButton1:hover{
+    background-color: #342c41;
+}
+
+.customTextInput1{
+    background-color: #342c41;
+    border: 2px solid #31353f;
+    border-style: inset;
+    border-radius: 5px;
+    color: rgb(220, 184, 184);
+    text-align: center;
+    text-decoration: none;
+    font-family: luminari, fantasy;
+    display: inline-block;
+    font-size: 2.3vh;
+    transition: background-color 0.2s ease;
+    width: 3vw;
+}
+
+.customTextInput1:hover{
+    background-color: #514467;
+}
+
+.customDropdown{
+    background-color: #342c41;
+    border: 2px solid #31353f;
+    border-style: inset;
+    border-radius: 5px;
+    color: rgb(220, 184, 184);
+    text-align: center;
+    text-decoration: none;
+    font-family: luminari, fantasy;
+    display: inline-block;
+    font-size: 2.3vh;
+    transition: background-color 0.2s ease;
+
+}
+
+.diceBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #464b56;
+    border-radius: 10px;
+    border: 2px solid #8e8e8e;
+    border-style: outset;
+    color:rgb(220, 184, 184);
+    position: absolute;
+    left: 40vw;
+    bottom: 3vh;
+    width: 14vw;
+    height: 31vh;
+    gap: 1vh;
+    padding: 1vh;
+}
+
+.diceButton{
+    background-color: #514467;
+    border: 2px solid #31353f;
+    border-style: outset;
+    border-radius: 5px;
+    color: rgb(220, 184, 184);
+    text-align: center;
+    text-decoration: none;
+    font-family: luminari, fantasy;
+    display: inline-block;
+    font-size: 2.3vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 3vw;
+    user-select: none;
+}
+
+.diceButton:hover{
+    background-color: #342c41;
+}
+
+.diceTextOutput{
+        background-color: #342c41;
+        border: 2px solid #31353f;
+        border-style: inset;
+        border-radius: 5px;
+        color: rgb(220, 184, 184);
+        text-align: center;
+        text-decoration: none;
+        font-family: luminari, fantasy;
+        display: inline-block;
+        font-size: 2.3vh;
+        transition: background-color 0.2s ease;
+        width: 3vw;
+}
+
+.diceHBox1{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
