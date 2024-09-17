@@ -1,25 +1,19 @@
 let intervalId = null;
+const incrementInput = document.getElementById('toggleIncrement');
 let increment;
-let interval;
-let interval_ms;
+let interval_ms = 60000;
 
-document.getElementById('toggleBox').addEventListener('change', function(event){
-    if((document.getElementById('toggleIncrement').value != '') && (document.getElementById('toggleTimer').value != '')){
-        increment = parseInt(document.getElementById('toggleIncrement').value);
-        interval  = parseInt(document.getElementById('toggleTimer').value);
-        interval_ms = interval*60000;
-
-        if(event.target.checked) {
-            intervalId = setInterval(() => {
-                incTime('minutes', increment);
-            }, interval_ms);
-        }
-        else {
-            clearInterval(intervalId);
-            intervalId = null;
-        }
+incrementInput.addEventListener('change', function(){
+    if(incrementInput.value != ''){
+        increment = parseInt(incrementInput.value);
+        intervalId = setInterval(() => {
+            incTime('minutes', increment);
+        }, interval_ms);
+    }  
+    else {
+        clearInterval(intervalId);
+        intervalId = null;
     }
-    else event.target.checked = false;   
 });
 
 document.getElementById('toggleIncrement').addEventListener('change', function(){

@@ -76,18 +76,32 @@ function padZero (value){
 
 //Used to update the clock with new values.
 function updateClock(){
-    clock.textContent = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+    clock.style.opacity = '.6';
+
+    setTimeout(() => {
+        clock.textContent = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+        clock.style.opacity = '1';
+    }, 50);
 }
 
 //Switches the am_pm box between am and pm.
 function switchAmPm(){
-    if (amPm.textContent == 'am') amPm.textContent = 'pm';
-    else amPm.textContent = 'am';
+    amPm.style.opacity = '0.6';
+
+    setTimeout(() => {
+        if (amPm.textContent == 'am') amPm.textContent = 'pm';
+        else amPm.textContent = 'am';
+        amPm.style.opacity = '1';
+    }, 50);
 }
 
 //Updates the date box.
 function updateDate(){
-    datebox.textContent = `${month.name} ${day},`;
+    datebox.style.opacity = '0.6';
+    setTimeout(() => {
+        datebox.textContent = `${month.name} ${day},`;
+        datebox.style.opacity = '1';
+    }, 50);
 }
 
 //Increments time based on unit and increment size.
@@ -219,6 +233,7 @@ document.addEventListener('keydown', function(event){
 
     switch(event.key){
         case 'ArrowRight':  addTime(inc);
+                            updateUpdateBox('Right arrow pressed');
                             break;
         case 'ArrowLeft':   subTime(inc);
                             break;
@@ -228,4 +243,3 @@ document.addEventListener('keydown', function(event){
                             break;
     }
 });
-

@@ -18,9 +18,14 @@ html, body{
     font-family: luminari, fantasy;
 }
 
+
+/*---CLOCK STYLING---*/
+
+
 #clock{
     font-size:72px;
     font-weight:bold;
+    transition: opacity .05s ease-out;
 }
 
 label, select{
@@ -51,12 +56,18 @@ label, select{
     font-size: 18px;
     margin-top: auto;
     margin-bottom: 20px;
+    transition: .05s ease-out;
 }
 
 #datebox{
     font-size: 20px;
     margin-top: 16px;
+    transition: .05s ease-out;
 }
+
+
+/*---AUTO-INCREMENT STYLING---*/
+
 
 .hbox1{
     display: flex;
@@ -87,6 +98,10 @@ label, select{
     height: 5vh;
 }
 
+
+/*---NAVBAR STYLING---*/
+
+
 .navbar{
     display: flex;
     flex-direction: row;
@@ -107,6 +122,10 @@ label, select{
     font-size: 8vh;
     font-weight: bold;
 }
+
+
+/*---WEATHER BOX STYLING---*/
+
 
 .weatherbox{
     display: flex;
@@ -130,18 +149,21 @@ label, select{
     font-size: 3.5vh;
     margin-left: 1vw;
     margin-top: 1vh;
+    transition: opacity .05s ease;
 }
 
 #weatherTitle{
     font-size: 7vh;
     font-weight: bold;
     margin-left: 3vw;
+    transition: opacity .05s ease;
 }
 
 #weatherFlavorBox{
     font-size: 2.8vh;
     margin-left: 1vw;
     margin-top: 1vh;
+    transition: opacity .05s ease;
 }
 
 #weatherRulesetBox{
@@ -149,6 +171,23 @@ label, select{
     font-size: 2.3vh;
     margin-left: 1vw;
     margin-top: 1.9vh;
+    transition: opacity .05s ease;
+}
+
+#windBox{
+    transition: opacity .05s ease;
+}
+
+#precipitationBox{
+    transition: opacity .05s ease;
+}
+
+#humidityBox{
+    transition: opacity .05s ease;
+}
+
+#visibilityBox{
+    transition: opacity .05s ease;
 }
 
 .weatherVbox1{
@@ -162,9 +201,11 @@ label, select{
     flex-direction:column;
     align-self: flex-start;
     font-size: 3vh;
-    margin-left: 4vw;
+    margin-left: 30vw;
     margin-top: .5vh;
     gap: 1vh;
+    position: absolute;
+
 }
 
 .weatherHbox1{
@@ -259,6 +300,14 @@ label, select{
 
 }
 
+.customDropdown1:hover{
+    background-color: #514467;
+}
+
+
+/*---DICE BOX STYLING---*/
+
+
 .diceBox{
     display: flex;
     flex-direction: column;
@@ -314,8 +363,77 @@ label, select{
         width: 3vw;
 }
 
+.diceText{
+    opacity: .05s ease-out;
+}
+
 .diceHBox1{
     display: flex;
     flex-direction: row;
     gap: 1vw;
+}
+
+
+/*---UPDATE BOX STYLING---*/
+
+
+.updateBox{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    background-color: #464b56;
+    border-radius: 10px;
+    border: 2px solid #8e8e8e;
+    border-style: outset;
+    color:rgb(220, 184, 184);
+    position: absolute;
+    right: 2vw;
+    bottom: 3vh;
+    width: 43vw;
+    height: 31vh;
+    font-size: 3vh;
+    padding-top: 1vh;
+    padding-left: 1vw;
+    padding-right:1vw;
+    padding-bottom:1vh;
+    overflow: scroll;
+}
+
+.updateBox > div {
+    flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
+    margin-bottom: 1vh; /* Spacing between items */
+}
+
+#update1{
+    font-weight: bold;
+}
+#update2{
+    opacity: .85;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#update3{
+    opacity: .7;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#update4{
+    opacity: .55;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#update5{
+    opacity: .4;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#update6{
+    opacity: .3;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

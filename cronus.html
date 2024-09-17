@@ -1,19 +1,13 @@
 <!--
     IDEAS:
+    add tooltip for automatic time increment & time interval.
+    animation for when time changes, weather changes, etc. 
+    event/update box for exposition. 
+
     Add percent probabilities for weather conditions and temperatures. 
-    SQL Link with database of encounters, generates immersive encounters experience
-    auto-increment as a ratio, where 1 is static for real time. If left blank, do nothing--as opposed
-    to needing a toggle. 
+    SQL Link with database of encounters, generates immersive encounters experience. Use pictures of the monster manual.
     Possibly encounter structures or magic areas? This could be extended to different modes...travel, encounter, etc. 
     different color schemes based on biome
-    when you mouse over time interval, tells you you can use the arrow keys
-
-    ROADMAP:
-    JUNE
-    SQL Link with database for weather, generates immersive weather experience
-        - Choose Biome
-        - Be able to add biome to database eventually. 
-
 
     JULY
     SQL Link with database of encounters, generates immersive encounters experience
@@ -42,7 +36,7 @@
         <div class="weatherbox">
             <div class="weatherHbox1">
                 <div class="weatherVbox1">
-                    <div id="biomeBox">Snowy Mountains</div>
+                    <div id="biomeBox"></div>
                     <div id="weatherTitle">Extremely Cold</div>
                     <div id="weatherFlavorBox">Spit goes 'clink'</div>
                 </div>
@@ -79,16 +73,11 @@
 
         <!--Toggle box format-->
         <div class="toggleBox">
+            <div>Automatic Time Increment - </div>
             <div>
-                <input type="checkbox" id="toggleBox">
+                <input type="text" id="toggleIncrement" class='customTextInput1' style="width: 3.3vw; font-size: 2vh;">
             </div>
-            <div>Toggle:</div>
-            <div>
-                <input type="text" id="toggleIncrement" style="width: 3.3vw">
-            </div>
-            <div> minutes pass in-game for </div>
-            <div><input type="text" id="toggleTimer" style="width: 3.3vw"></div>
-            <div>  irl.</div>
+            <div> : 1</div>
         </div>
 
         <!--Clock format-->
@@ -100,7 +89,7 @@
             </div>
             <div class="intervalHBox">
                 <label for='dropdown'>Time interval:</label>
-                <select id="dropdown" name="options" tabindex="0">
+                <select class="customDropdown" id="dropdown" name="options" tabindex="0">
                     <option value="6">Turn (6 Seconds)</option>
                     <option value="30">30 Minutes</option> 
                     <option value="1">Hour</option>
@@ -115,35 +104,47 @@
         <div class="diceBox">
             <div class="diceHBox1">
                 <div class="diceButton" id="d4button">D4</div>
-                <div class="diceTextOutput" id="d4value">0</div>
-                <div class="diceTextOutput" id="d4total">0</div>
+                <div class="diceTextOutput"><span class="diceText" id="d4value">0</span></div>
+                <div class="diceTextOutput"><span class='diceText' id="d4total">0</span></div>
             </div>
             <div class="diceHBox1">
                 <div class="diceButton" id="d6button">D6</div>
-                <div class="diceTextOutput" id="d6value">0</div>
-                <div class="diceTextOutput" id="d6total">0</div>
+                <div class="diceTextOutput"><span class="diceText" id="d6value">0</span></div>
+                <div class="diceTextOutput"><span class="diceText" id="d6total">0</span></div>
             </div>
             <div class="diceHBox1">
                 <div class="diceButton" id="d8button">D8</div>
-                <div class="diceTextOutput" id="d8value">0</div>
-                <div class="diceTextOutput" id="d8total">0</div>
+                <div class="diceTextOutput"><span class="diceText" id="d8value">0</span></div>
+                <div class="diceTextOutput"><span class="diceText" id="d8total">0</span></div>
             </div>
             <div class="diceHBox1">
                 <div class="diceButton" id="d10button">D10</div>
-                <div class="diceTextOutput" id="d10value">0</div>
-                <div class="diceTextOutput" id="d10total">0</div>
+                <div class="diceTextOutput"><span class="diceText" id="d10value">0</span></div>
+                <div class="diceTextOutput"><span class="diceText" id="d10total">0</span></div>
             </div>
             <div class="diceHBox1">
                 <div class="diceButton" id="d12button">D12</div>
-                <div class="diceTextOutput" id="d12value">0</div>
-                <div class="diceTextOutput" id="d12total">0</div>
+                <div class="diceTextOutput"><span class="diceText" id="d12value">0</span></div>
+                <div class="diceTextOutput"><span class="diceText" id="d12total">0</span></div>
             </div>
             <div class="diceHBox1">
                 <div class="diceButton" id="d20button">D20</div>
-                <div class="diceTextOutput" id="d20value">0</div>
-                <div class="diceTextOutput" id="d20total">0</div>
+                <div class="diceTextOutput"><span class="diceText" id="d20value">0</span></div>
+                <div class="diceTextOutput"><span class="diceText" id="d20total">0</span></div>
             </div>
         </div>
+
+        <!--Update box format-->
+        <div class="updateBox">
+            <div id="update1">You arrive at the Ranting Raven.You arrive at the Ranting Raven.You arrive at the Ranting Raven.You arrive at the Ranting Raven.You arrive at the Ranting Raven.</div>
+            <div id="update2">test</div>
+            <div id="update3">The wind begins howling</div>
+            <div id="update4">The wind begins howling</div>
+            <div id="update5">The wind begins howling</div>
+            <div id="update6">The wind begins howling</div>
+        </div>
+
+        <script src="updateBox.js"></script>
         <script src="weatherObjects.js"></script>
         <script src='clock.js'></script>
         <script src="autoInc.js"></script>

@@ -1,4 +1,4 @@
- class Temperature{
+class Temperature{
     constructor(name, effect, description, max_temp, min_temp, rating){
         this.name = name;
         this.effect = effect;
@@ -327,6 +327,3 @@ toolTipTrigger.addEventListener('mouseover', function(event){
 toolTipTrigger.addEventListener('mouseout', function(){
     toolTip.style.display = 'none';
 });
-
-
-

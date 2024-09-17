@@ -39,8 +39,16 @@ d4button.addEventListener('click', function(){
 
     total = parseInt(d4total.textContent);
     x = Math.ceil(Math.random()*4);
-    d4value.textContent = x;
-    d4total.textContent = total + x;
+
+    d4value.style.opacity = '.6'
+    d4total.style.opacity = '.6'
+    setTimeout(() => {
+        d4value.textContent = x;
+        d4total.textContent = total + x;
+        d4value.style.opacity = '1'
+        d4total.style.opacity = '1'
+    }, 50);
+
 });
 
 d6button.addEventListener('click', function(){
@@ -57,8 +65,14 @@ d6button.addEventListener('click', function(){
 
     total = parseInt(d6total.textContent);
     x = Math.ceil(Math.random()*6);
-    d6value.textContent = x;
-    d6total.textContent = total + x;
+    d6value.style.opacity = '.6'
+    d6total.style.opacity = '.6'
+    setTimeout(() => {
+        d6value.textContent = x;
+        d6total.textContent = total + x;
+        d6value.style.opacity = '1'
+        d6total.style.opacity = '1'
+    }, 50);
 });
 
 d8button.addEventListener('click', function(){
@@ -75,8 +89,14 @@ d8button.addEventListener('click', function(){
 
     total = parseInt(d8total.textContent);
     x = Math.ceil(Math.random()*8);
-    d8value.textContent = x;
-    d8total.textContent = total + x;
+    d8value.style.opacity = '.6'
+    d8total.style.opacity = '.6'
+    setTimeout(() => {
+        d8value.textContent = x;
+        d8total.textContent = total + x;
+        d8value.style.opacity = '1'
+        d8total.style.opacity = '1'
+    }, 50);
 });
 
 d10button.addEventListener('click', function(){
@@ -93,8 +113,14 @@ d10button.addEventListener('click', function(){
 
     total = parseInt(d10total.textContent);
     x = Math.ceil(Math.random()*10);
-    d10value.textContent = x;
-    d10total.textContent = total + x;
+    d10value.style.opacity = '.6'
+    d10total.style.opacity = '.6'
+    setTimeout(() => {
+        d10value.textContent = x;
+        d10total.textContent = total + x;
+        d10value.style.opacity = '1'
+        d10total.style.opacity = '1'
+    }, 50);
 });
 
 d12button.addEventListener('click', function(){
@@ -111,8 +137,14 @@ d12button.addEventListener('click', function(){
 
     total = parseInt(d12total.textContent);
     x = Math.ceil(Math.random()*12);
-    d12value.textContent = x;
-    d12total.textContent = total + x;
+    d12value.style.opacity = '.6'
+    d12total.style.opacity = '.6'
+    setTimeout(() => {
+        d12value.textContent = x;
+        d12total.textContent = total + x;
+        d12value.style.opacity = '1'
+        d12total.style.opacity = '1'
+    }, 50);
 });
 
 d20button.addEventListener('click', function(){
@@ -129,6 +161,12 @@ d20button.addEventListener('click', function(){
 
     total = parseInt(d20total.textContent);
     x = Math.ceil(Math.random()*20);
-    d20value.textContent = x;
-    d20total.textContent = total + x;
+    d20value.style.opacity = '.6'
+    d20total.style.opacity = '.6'
+    setTimeout(() => {
+        d20value.textContent = x;
+        d20total.textContent = total + x;
+        d20value.style.opacity = '1'
+        d20total.style.opacity = '1'
+    }, 50);
 });
