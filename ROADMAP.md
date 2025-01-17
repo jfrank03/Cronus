@@ -10,6 +10,8 @@
   * Month
 * Remove redundant code
   * Text fade updates
+* Fix bugs
+  * Clock doesn't begin at current time properly
 * Restructure to MVC Architecture
 * Complete update box 
 * Finish adding tooltips
