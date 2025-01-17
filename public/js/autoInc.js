@@ -1,7 +1,7 @@
 /* 
-* Manages a toggle switch and an input field. When toggled on, the program will
-* increment the time automatically by x in-game minutes every 1 real-world minute, where
-* x is the number in the input field.
+* Manages an input field. When the field is empty, nothing happens, but when it is filled by the user,
+* code increments the time automatically by x in-game minutes every 1 real-world minute, where
+* x is the number in the input field. Updates dynamically.
 */ 
 
 //This is the interval, which will be created and execute every interval_ms milliseconds (Currently 1 minute).
