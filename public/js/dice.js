@@ -1,6 +1,13 @@
-let d4button = document.getElementById('d4button');
-let d4value = document.getElementById('d4value');
-let d4total = document.getElementById('d4total');
+/* 
+* Used to create a dice rolling section of the website. Sets up a dice in a rollButton/roll/total format.
+* The outputs for all dice are cleared every time you switch what kind of die you're rolling.
+* There should also definitely be an object for dice.
+*/ 
+
+//For example, 
+let d4button = document.getElementById('d4button'); //Button to roll die
+let d4value = document.getElementById('d4value');   //Value rolled
+let d4total = document.getElementById('d4total');   //Total of all rolls consecutively made.
 
 let d6button = document.getElementById('d6button');
 let d6value = document.getElementById('d6value');
@@ -25,7 +32,9 @@ let d20total = document.getElementById('d20total');
 let total;
 let x;
 
+//Listener for the D4 button click.
 d4button.addEventListener('click', function(){
+    //Clear all others
     d6value.textContent = 0;
     d6total.textContent = 0;
     d8value.textContent = 0;
@@ -37,20 +46,22 @@ d4button.addEventListener('click', function(){
     d20value.textContent = 0;
     d20total.textContent = 0;
 
-    total = parseInt(d4total.textContent);
-    x = Math.ceil(Math.random()*4);
+    total = parseInt(d4total.textContent);  //Read current total
+    x = Math.ceil(Math.random()*4);         //Acquire random number 1-4
 
+    // This makes the update pretty. I have a method for this somewhere, will implement.
     d4value.style.opacity = '.6'
     d4total.style.opacity = '.6'
     setTimeout(() => {
-        d4value.textContent = x;
-        d4total.textContent = total + x;
+        d4value.textContent = x;    //Output value rolled
+        d4total.textContent = total + x;    //Increment total
         d4value.style.opacity = '1'
         d4total.style.opacity = '1'
     }, 50);
 
 });
 
+//The rest of these are the same.
 d6button.addEventListener('click', function(){
     d4value.textContent = 0;
     d4total.textContent = 0;

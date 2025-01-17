@@ -1,10 +1,19 @@
 # Cronus Project Roadmap
 
 ## Homepage overhaul 
+* Fully annotate code
+  * Clock
+  * updateBox
+  * weatherObjects
+* Create objects
+  * Clock
+  * Dice
+* Remove redundant code
+  * Text fade updates
 * Restructure to MVC Architecture
 * Complete update box 
-* Implement placeholder encounter box
 * Finish adding tooltips
+* Implement placeholder encounter box
 
 ## Database  
 * Add database with monsters and biomes. 
