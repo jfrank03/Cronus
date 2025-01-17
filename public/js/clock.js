@@ -1,19 +1,27 @@
-const dropdown = document.getElementById("dropdown");
-const clock = document.getElementById("clock");
-const amPm = document.getElementById("am_pm_box");
-const datebox = document.getElementById("datebox");
-const volatility = document.getElementById("volatilityBox");
-let timeSinceWeatherUpdate = 0;
+/*
+Creates the Clock section of the website. This is an important feature;
+it allows the dm to easily keep track of time. It begins with the current
+time of day/date, and then the dm uses up/down arrow keys to select
+their time increment and the forware/back arrow keys to add/subtract that amount.
+*/ 
 
-let now = new Date();
+const dropdown = document.getElementById("dropdown"); //Dropdown of increment options
+const clock = document.getElementById("clock");     //Clock object ex. 00:00:00 
+const amPm = document.getElementById("am_pm_box");  //Box saying "am" or "pm"
+const datebox = document.getElementById("datebox"); //Box saying date
+//Box saying volatility- used for how often the weather changes automatically.
+const volatility = document.getElementById("volatilityBox"); 
+let timeSinceWeatherUpdate = 0; //Also used for volatility.
 
+//Initialize current time values
+let now = new Date(); 
 let seconds = now.getSeconds();
 let minutes = now.getMinutes();
 let hours = now.getHours();
 let day = now.getDate();
 let month = now.getMonth() + 1;
 
-//Create a linked list class for tracking months.
+//Create a linked list class for tracking months. This should be in a separate file.
 class Month {
   constructor(name, next, previous, days) {
     this.name = name;
@@ -78,6 +86,7 @@ function padZero(value) {
 
 //Used to update the clock with new values.
 function updateClock() {
+  //Replace with updateWithFade
   clock.style.opacity = ".6";
 
   setTimeout(() => {
@@ -90,6 +99,7 @@ function updateClock() {
 
 //Switches the am_pm box between am and pm.
 function switchAmPm() {
+  //Replace with updateWithFade
   amPm.style.opacity = "0.6";
 
   setTimeout(() => {
@@ -101,6 +111,7 @@ function switchAmPm() {
 
 //Updates the date box.
 function updateDate() {
+  //Replace with updateWithFade
   datebox.style.opacity = "0.6";
   setTimeout(() => {
     datebox.textContent = `${month.name} ${day},`;
@@ -113,6 +124,7 @@ function incTime(unit, increment) {
   switch (unit) {
     case "seconds":
       seconds += increment;
+      //If there's more than 60 seconds, make one a minute.
       if (seconds >= 60) {
         seconds -= 60;
         incTime("minutes", 1);
@@ -120,13 +132,15 @@ function incTime(unit, increment) {
       break;
     case "minutes":
       minutes += increment;
+      //If there's more than 60 minutes, make one an hour. This should be a while.
       if (minutes >= 60) {
         minutes -= 60;
         incTime("hours", 1);
       }
       break;
     case "hours":
-      if (hours == 12) hours = hours + increment - 12;
+      //If/else seems redundant, I'm gonna look at it later. I know there was a reason I did it.
+      if (hours == 12) hours = increment;
       else {
         hours += increment;
         if (hours >= 12) {
@@ -136,9 +150,13 @@ function incTime(unit, increment) {
         }
       }
 
+      //If there's a volatility value input, 
       if (volatility.value != "") {
+        //Increment the hours since there was a change in weather
         timeSinceWeatherUpdate += increment;
+        //And if that time surpasses the volatility, 
         if (timeSinceWeatherUpdate >= parseInt(volatility.value)) {
+          //generate new weather conditions and reset the timer.
           snowyMountains.generateWeather();
           timeSinceWeatherUpdate =
             timeSinceWeatherUpdate % parseInt(volatility.value);
@@ -258,7 +276,7 @@ document.addEventListener("keydown", function (event) {
   switch (event.key) {
     case "ArrowRight":
       addTime(inc);
-      updateUpdateBox("Right arrow pressed");
+      updateUpdateBox("Right arrow pressed"); //Testing update box.
       break;
     case "ArrowLeft":
       subTime(inc);

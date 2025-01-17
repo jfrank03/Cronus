@@ -8,13 +8,14 @@
 * Create objects
   * Clock
   * Dice
+  * Month
 * Remove redundant code
   * Text fade updates
 * Restructure to MVC Architecture
 * Complete update box 
 * Finish adding tooltips
 * Implement placeholder encounter box
-
+* Establish testing
 ## Database  
 * Add database with monsters and biomes. 
   
