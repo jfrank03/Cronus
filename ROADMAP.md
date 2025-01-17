@@ -2,7 +2,6 @@
 
 ## Homepage overhaul 
 * Fully annotate code
-  * Clock
   * updateBox
   * weatherObjects
 * Create objects
