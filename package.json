@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "db:init": "mysql -u root -p < ./sql/cronus.sql"
+  },
   "dependencies": {
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.5",
@@ -6,4 +9,6 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.11.4"
   }
+  
+  
 }
