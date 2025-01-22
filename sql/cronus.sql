@@ -9,4 +9,4 @@ USE cronus;
 SOURCE schema.sql;
 
 -- Load the seed data
-SOURCE cronus-seed.sql;
+SOURCE cronus_seed.sql;
